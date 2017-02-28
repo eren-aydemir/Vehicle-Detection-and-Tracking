@@ -38,6 +38,8 @@ Labeled data for [vehicle](https://s3.amazonaws.com/udacity-sdc/Vehicle_Tracking
 
 There is other feature extraction methods as well. Rescaling images to 32x32 and making bin spatial could be another method. And also objects could be characterized by their color. In below color, bin spatial and hog feature plots can be seen.
 
+As feature extraction parameters, YCrCb color spaces is compared with others like RGB, HSV etc. and best result is given by YCrCb. All color channels found as useful for feature matrix and HOG is calculated and concatenated. Spaitial size and histogram bins are choosen as 32. 8 pixel per cell and 2 cell per block is used. Image rescaling choosen as 1.5. All of the parameter decision process made by trial and error. Parameter effects are investigated and appropriate parameters are used. 
+
 ![Features][image3] 
 
 As one can see all feature plotings in different scaling domain and they should scaled for further feature classification. In below apporach can be found; scaled together and scaled seperatly and then combined:
