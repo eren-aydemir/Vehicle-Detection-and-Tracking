@@ -92,4 +92,6 @@ Here's a [link to my video result](./project_video_output_v1.mp4)
 
 
 In this project; color, bin spatial and HOG feature creations are investigated. SVM classifier is implemented and it is trained with car and non-car images. For vehicle detection and tracking alogrithm development, trained classifier is used with window search algorithm. Feature matrix is calculated at once and it is subsampled images asked for the result from trained classifier. According to returned result of a classifier, car found boxes rewarded by 1 and heat map is generated according to `label` matrix and false positives are eliminated accordingly.
+
+When the car is not likely to a "car shape" this pipeline are close to fail. Color based feature matrix classification should be added to HOG for this kind for failes. And finally bounding box smoothing should be implemeted for less jittery visualization.
  
