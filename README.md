@@ -54,7 +54,7 @@ For a further step this scaled and combined features matrices should be used for
 `find_cars` function is where trained classifier used for our purpose. This function calculates HOG features for all channels of a picture. Here pictures are every frame of a video and they cropped to only see certain scene (there is no vehicle at top or bottom). To speed up calculations it's calculates all HOG features at once and takes results window by window as subimage and test whether there is a car or not. If classifier results a 1 then searched subimage boundaries recorded in `box_list`. Due searching for different sized boxes, number of car found boxes could be more than one for same car. This fuctionality gives us to eliminate false positives and also gives us an understanding about how certain we are at the classification. 
 
 
-| Test Image               | Final Car                      |
+| Test Image               | Bounding Boxes                 |
 |:------------------------:|:------------------------------:|
 |![Test Image][image6]     |![Test Image Found][image7]     |
 
@@ -64,9 +64,9 @@ For a further step this scaled and combined features matrices should be used for
 There is three functions in pipeline for heatmap plotting. Heatmap help us to understand false positives and classification certainty. `add_heat` function adds 1 as a value for every pixel at detected boxes. `apply_threshold` function removes values lower than threshold for every pixel, this help us to understand false positives. And finally `draw_labeled_bboxes` draws rectangles according to found labels from `scipy.ndimage.measurements` class's `label` function.
 
 
-| Test Image               | Final Car                      |
+| Test Image               | Heat Image                     |
 |:------------------------:|:------------------------------:|
-|![Test Image][image6]     |![Test Image Found][image8]     |
+|![Test Image][image6]     |![Heat Image][image8]           |
 
 
 #### 4. Results of test images
@@ -74,7 +74,7 @@ There is three functions in pipeline for heatmap plotting. Heatmap help us to un
 
 Here's a example test image result, found car bounding boxes and heat map result
 
-| Test Image               | Final Car                      |
+| Test Image               | Final Result                   |
 |:------------------------:|:------------------------------:|
 |![Test Image][image6]     |![Test Image Final][image9]     |
 
